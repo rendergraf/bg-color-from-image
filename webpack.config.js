@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -31,11 +32,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
-      favicon: './src/assets/favicon.ico',
+      favicon: './src/assets/images/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
+    new Dotenv(),
   ],
   devServer: {
     port: 3000, // you can change the port
